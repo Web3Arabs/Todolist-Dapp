@@ -2,7 +2,7 @@ const hre = require("hardhat");
 
 async function main() {
   /*
-  لنشر عقود ذكية جديدة getContractFactory يستخدم
+    لنشر عقود ذكية جديدة getContractFactory يستخدم
   */
   const todolistContract = await hre.ethers.getContractFactory("Todolist");
 

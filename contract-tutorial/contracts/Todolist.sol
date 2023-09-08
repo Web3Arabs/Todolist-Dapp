@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.9;
+pragma solidity ^0.8.19;
 
 contract Todolist {
 
@@ -11,6 +11,7 @@ contract Todolist {
     }
 
     mapping (address => Task[]) private Tasks;
+    uint256 public taskIds;
 
     /**
         addTask - تعمل هذه الوظيفة بارسل مهمة جديدة في Tasks
@@ -22,6 +23,7 @@ contract Todolist {
             status: false,
             timestamp: block.timestamp
         }));
+        taskIds += 1;
     }
 
     /**
@@ -42,14 +44,7 @@ contract Todolist {
         getTasks - تعمل هذه الوظيفة في جلب المهام المتعلقة بالمسخدم
     */
     function getTasks() public view returns (Task[] memory) {
-        Task[] memory listTask = new Task[](Tasks[msg.sender].length);
-
-        uint i = 0;
-        for (uint taskId = 0; taskId < Tasks[msg.sender].length; taskId++) {
-            listTask[i] = Tasks[msg.sender][taskId];
-            i++;
-        }
-
-        return listTask;
+        return Tasks[msg.sender];
     }
 }
+

@@ -4,7 +4,7 @@ import abi from "../utils/Todolist.json"
 
 export default function Home() {
   // Contract Address & ABI
-  const contractAddress = "0x8452c40cc911a9ec87d82b084319743f80204774"
+  const contractAddress = "0x322999e9c7d8269095039665f851a9ae83905224"
   const contractABI = abi.abi
 
   // ستقوم بتخزين عنوان المحفظة التي ستتصل بالتطبيق من اجل مراقبة ما اذا كانت المحفظة متصلة بالتطبيق او نتمكن من استدعاء عنوان المحفظة المتصلة
